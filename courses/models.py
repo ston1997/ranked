@@ -4,14 +4,16 @@ from django.urls import reverse
 
 
 class Course(models.Model):
+    """Model for store courses with their base information in our service."""
+
     title = models.CharField(max_length=200, db_index=True)
     overview = models.TextField()
-    price = models.DecimalField(max_digits=10, decimal_places=2)
+    price = models.DecimalField(max_digits=100, decimal_places=2)
     slag = models.SlugField(max_length=200, unique=True)
     rating = models.PositiveIntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
 
     class Meta:
-        ordering = ('title',)
+        ordering = ('rating',)
         verbose_name = 'Course'
         verbose_name_plural = 'Courses'
 
