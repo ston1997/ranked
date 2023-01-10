@@ -2,6 +2,7 @@ from rest_framework import serializers
 
 from .models import Course
 
+
 class CourseListSerializer(serializers.ModelSerializer):
     """Return short course information for collection of courses"""
     class Meta:

@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     # apps:
 
     'ranked',
+    'courses',
+    # 'rest_framework',
 
 ]
 
